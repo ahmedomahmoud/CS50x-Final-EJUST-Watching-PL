@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Account
+{% endblock %}
+
+{% block body %}
+    <form action="/create_acc" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center" style="margin-top: 40px;">
+                    <input autocomplete="off" autofocus class="form-control mb-3" id="username" name="username" placeholder="Username" type="text" required>
+                    <input autocomplete="off" class="form-control mb-3" id="id" name="id" placeholder="id" type="text" required>
+                    <input class="form-control mb-3" id="password" name="password" placeholder="Password" type="password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-striped-columns">
+                        {% for team in teams %}
+                        <tr>
+                            <td style="padding-right: 10px;">
+                                <input type="radio" name="club" value="{{ team.club_name }}">
+                            </td>
+                            <td>
+                                <img src="{{ team.logo_link }}" alt="{{ team.club_name }}" width="50">
+                            </td>
+                            <td>
+                                <h2>{{ team.club_name }}</h2>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center">
+            <button class="btn btn-primary" type="submit">Create Account</button>
+        </div>
+    </form>
+{% endblock %}
+
