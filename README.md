@@ -24,5 +24,5 @@ Three tables: users, games, and registers.
 * users table: Contains id, username, team, and password.
 * games table: Stores date, time, home_team, away_team, and game_id.
 * registers table: Tracks user registrations with foreign keys user_id and game_id.
-
+#### Demo
 ![GIF Demo](Animation.gif)
